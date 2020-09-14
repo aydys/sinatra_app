@@ -26,6 +26,21 @@ post '/visit' do
 	@date_time = params[:datetime]
 	@master = params[:master]
 
+	if @username == ''
+		@error = 'Enter your name'
+		return erb :visit
+	end
+
+	if @phone == ''
+		@error = 'Enter your phone'
+		return erb :visit
+	end
+
+	if @date_time == ''
+		@error = 'Enter datetime'
+		return erb :visit
+	end
+
 	@title = 'Thank you'
 	@message = "Dear #{@username}, we'll waiting for you at #{@date_time}. Your master: #{@master}"
 
