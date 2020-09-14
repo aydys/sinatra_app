@@ -25,20 +25,19 @@ post '/visit' do
 	@phone = params[:phone]
 	@date_time = params[:datetime]
 	@master = params[:master]
+	
+	hh = { 
+		:username => 'Enter your name',
+		:phone => 'Enter your phone',
+		:datetime => 'No correct datetime'
+	}
 
-	if @username == ''
-		@error = 'Enter your name'
-		return erb :visit
-	end
+	hh.each do |key, value|
+		if params[key] == ''
+			@error = hh[key]
 
-	if @phone == ''
-		@error = 'Enter your phone'
-		return erb :visit
-	end
-
-	if @date_time == ''
-		@error = 'Enter datetime'
-		return erb :visit
+			return erb :visit
+		end
 	end
 
 	@title = 'Thank you'
