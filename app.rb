@@ -96,7 +96,7 @@ post '/visit' do
 		values 
 		( ?, ?, ?, ?)', [@username, @phone, @date_time,  @master]
 
-	erb "Ok, username is #{@username}, #{@phone}, #{@date_time}, #{@master}"
+	erb "Thanks, you maked an appointment"
 end
 
 post '/contacts' do
