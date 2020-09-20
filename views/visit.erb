@@ -19,9 +19,9 @@
   <div class="form-group">
     <label>Select master:</label>
     <select name="master" class="form-control" placeholder="Select">
-      <option>Walter White</option>
-      <option>Jessie Pickman</option>
-      <option>Gus Fring</option>
+      <option <%= @master == 'Walter White' ? 'selected' : '' %>>Walter White</option>
+      <option <%= @master == 'Jessie Pickman' ? 'selected' : '' %>>Jessie Pickman</option>
+      <option <%= @master == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option>
     </select>
   </div>
 
