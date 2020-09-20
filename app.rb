@@ -16,6 +16,11 @@ def seed_db db, barbers
 	end
 end
 
+before do
+	db = get_db
+	@results_barber = db.execute 'select * from Barbers'
+end
+
 def get_db
 	db = SQLite3::Database.new 'barbershop.db'
 	db.results_as_hash = true
